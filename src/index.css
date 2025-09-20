@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --font-times: "Times New Roman", serif;
+  --text-sm: clamp(0.875rem, 0.85rem + 0.2vw, 1rem);   /* 14px → 16px */
+  --text-base: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);   /* 16px → 20px */
+  --text-lg: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);   /* 20px → 24px */
+  --text-xl: clamp(1.5rem, 1.3rem + 0.8vw, 2rem);      /* 24px → 32px */
+  --text-2xl: clamp(2rem, 1.6rem + 1vw, 2.5rem);       /* 32px → 40px */
+}
