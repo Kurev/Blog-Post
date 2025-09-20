@@ -1,3 +1,8 @@
+import { FaFacebook } from "react-icons/fa";
+import { TfiEmail } from "react-icons/tfi";
+
+
+
 interface FooterProps {
   name: string;
 }
@@ -42,9 +47,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-2">
-          <div className="w-[3rem] h-[3rem] bg-[#38330f] rounded-full"></div>
-          <div className="w-[3rem] h-[3rem] bg-[#38330f] rounded-full"></div>
+        <div className="flex gap-4">
+          <div><FaFacebook size={48}/></div>
+          <div className="w-[3rem] h-[3rem] bg-[#5d4102] rounded-full flex justify-center items-center"><TfiEmail size={25} color="white"/></div>
         </div>
       </div>
       <div>

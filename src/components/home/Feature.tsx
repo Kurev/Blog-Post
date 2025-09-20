@@ -25,7 +25,7 @@ const Feature = () => {
   return (
     <div className="font-times py-30 px-[5%]">
       <div className="flex items-center justify-center w-full mb-10">
-        <p className="text-[2.438rem]">Featured Projects</p>
+        <p className="text-[2.438rem] font-semibold">Featured Projects</p>
       </div>
       <div className="grid grid-cols-3 gap-1">
         {features.map((feature, index) => (
