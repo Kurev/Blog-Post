@@ -11,7 +11,7 @@ const home = () => {
   return (
     <MainLayout>
       <main>
-        <section className='px-[5%]' >
+        <section >
           <Hero />
           <Benifits />
         </section>
