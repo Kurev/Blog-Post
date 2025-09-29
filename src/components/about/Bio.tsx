@@ -1,3 +1,6 @@
+import cong from "../../assets/8.webp"
+
+
 interface BioProps {
   desc: string;
 }
@@ -16,7 +19,11 @@ const Bio = () => {
   ];
   return (
     <div className="flex justify-end w-full py-[4rem]">
-      <div className=" bg-[#8d938c] w-[35rem] "></div>
+      <div className="w-[40rem] bg-cover aspect-[2/1]"
+        style={{
+          backgroundImage: `url(${cong})`
+        }}
+      ></div>
       <div className=" bg-[#cda26f] w-[45rem] flex flex-col gap-7 p-10 font-times text-white">
         {biodesc.map((list, index) => (
           <p className="text-[1.375rem] text-justify" key={index}>{list.desc}</p>

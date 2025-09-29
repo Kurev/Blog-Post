@@ -8,6 +8,7 @@ import Legislative from './pages/Legislative'
 import Projects from './pages/Projects'
 import LivesTouched from './pages/LivesTouched'
 import Contact from './pages/Contact'
+import KeyIssue1 from './components/keyIssues/KeyIssue1'
 
 const router = createBrowserRouter ([
   {path: '/', element: <Home />},
@@ -16,6 +17,7 @@ const router = createBrowserRouter ([
   {path: '/projects', element: <Projects />},
   {path: '/livesTouched', element: <LivesTouched />},
   {path: '/contact', element: <Contact />},
+  {path: '/issue', element: <KeyIssue1 />}
 
   
 ])
