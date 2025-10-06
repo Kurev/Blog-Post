@@ -4,7 +4,7 @@ import centerImg from "../../../assets/11.webp";
 const Issue1 = () => {
   return (
     <div
-      className="w-full bg-center bg-cover aspect-[16/9] font-times py-[5rem] px-[5%]"
+      className="w-full bg-center bg-cover aspect-[16/9] font-times pt-[5rem] px-[5%]"
       style={{
         backgroundImage: `url(${heroIssue})`,
       }}
@@ -35,6 +35,9 @@ const Issue1 = () => {
           aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
           imperdiet a, venenatis vitae, justo.{" "}
         </p>
+      </div>
+      <div className="flex justify-end items-center py-10 px-[5%]">
+        <button className="text-[2.375rem] font-times text-[#4e3100] cursor-pointer">{`> KEY ISSUE 2`}</button>
       </div>
     </div>
   );

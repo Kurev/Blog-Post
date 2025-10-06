@@ -1,8 +1,16 @@
+import Bio from "../components/legislative/Bio"
+import MainLayout from "../layouts/MainLayout"
 
 
 const Legislative = () => {
   return (
-    <div>Legislative</div>
+    <MainLayout>
+      <main>
+        <section>
+          <Bio />
+        </section>
+      </main>
+    </MainLayout>
   )
 }
 
