@@ -1,8 +1,21 @@
 
+import Hero from "../components/project/Hero"
+import Location from "../components/project/Location"
+import MainLayout from "../layouts/MainLayout"
+
 
 const Projects = () => {
   return (
-    <div>Projects</div>
+    <MainLayout>
+      <main>
+        <section>
+          <Hero />
+        </section>
+        <section>
+          <Location />
+        </section>
+      </main>
+    </MainLayout>
   )
 }
 

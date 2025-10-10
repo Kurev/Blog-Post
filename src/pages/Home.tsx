@@ -1,28 +1,28 @@
-
-import Benifits from "../components/home/Benifits"
-import Feature from "../components/home/Feature"
-import Hero from "../components/home/Hero"
-import YearsOfService from "../components/home/YearsOfService"
-import MainLayout from "../layouts/MainLayout"
-
+import Benifits from "../components/home/Benifits";
+import Feature from "../components/home/Feature";
+import Hero from "../components/home/Hero";
+import YearsOfService from "../components/home/YearsOfService";
+import MainLayout from "../layouts/MainLayout";
 
 const home = () => {
-  
   return (
     <MainLayout>
       <main>
-        <section >
+        <section>
           <Hero />
+        </section>
+        <section>
           <Benifits />
         </section>
-
         <section>
           <Feature />
-          <YearsOfService/>
+        </section>
+        <section>
+          <YearsOfService />
         </section>
       </main>
-    </ MainLayout >
-  )
-}
+    </MainLayout>
+  );
+};
 
-export default home
+export default home;

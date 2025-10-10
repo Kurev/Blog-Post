@@ -1,11 +1,10 @@
 import imgBio from "../../assets/profile.webp";
-import { IoIosSearch } from "react-icons/io";
-import { SlArrowDown } from "react-icons/sl";
+
 
 const Bio = () => {
   return (
     <div
-      className="min-h-screen px-[5%] flex flex-col justify-center font-times gap-10 py-20"
+      className="min-h-[85vh] px-[5%] flex flex-col justify-center font-times gap-10 pt-12 pb-4"
       style={{
         backgroundColor: "#f0f0f0",
         background:
@@ -39,29 +38,7 @@ const Bio = () => {
           </ul>
         </div>
       </div>
-      <div>
-        <p className="text-[2.313rem] text-[#4e3100] font-bold">Bills</p>
-        <div className="flex flex-row justify-between">
-          <div className="flex gap-8 ">
-            <input
-              className="border-b-2 border-[#00000061] text-[2.063rem]"
-              type="text"
-              placeholder="Bill No, Title, or Keyword"
-            />
-            <button className="bg-white px-4 py-1 rounded-[17px] border-1 border-black cursor-pointer">
-              <p className="text-[#4e3100] text-[2.5rem]">
-                <IoIosSearch />
-              </p>
-            </button>
-          </div>
-          <div className="flex py-1 px-4 gap-10 items-center border-1 border-[#5d5d5d] text-[1.563rem] cursor-pointer">
-            <p>5</p>
-            <p>
-              <SlArrowDown />
-            </p>
-          </div>
-        </div>
-      </div>
+      
     </div>
   );
 };
