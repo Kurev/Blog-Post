@@ -38,8 +38,7 @@ const BillPassed = () => {
   );
 
   // Loop: if last item, go back to first
-  const nextBill =
-    bills && bills.length > 0 ? bills[(currentIndex + 1) % bills.length] : null;
+  const nextBill = bills && bills.length > 0 ? bills[(currentIndex + 1) % bills.length] : null;
 
   const handleNext = () => {
     if (nextBill) {

@@ -1,13 +1,7 @@
 import { useState } from "react";
-import school from "../../assets/s.webp";
-import farming from "../../assets/farming.webp";
-import electricity from "../../assets/electricity.webp";
-import treePlanting from "../../assets/treePlanting.webp";
-import culture from "../../assets/culture.webp";
-import hospital from "../../assets/hospital.webp";
-
+import { projectDirectory } from "../data/projectData"
 interface ProjectItem {
-  project: string;
+  projectTitle: string;
   img: string;
   overview: string;
   date: string;
@@ -25,93 +19,7 @@ interface FilterProps {
 }
 
 const Directory = () => {
-  const projectDirectory: ProjectItem[] = [
-    {
-      project: "School Improvement",
-      img: school,
-      overview: "School Support",
-      date: "10/2/2021",
-      area: "San Isidro, Makilala, Cotabato",
-      scope: "Executive",
-      sector: "Education",
-      summary:
-        "A project focused on enhancing educational facilities and providing better learning environments for students across local schools in Cotabato.",
-      story:
-        "The School Improvement Project aimed to uplift the quality of education in San Isidro by renovating classrooms, supplying essential learning materials, and training teachers. With community support, new school buildings and digital learning tools were introduced, resulting in higher student attendance and improved academic performance.",
-      projectImg: [school, treePlanting, hospital],
-    },
-    {
-      project: "Agricultural Support Program",
-      img: farming,
-      overview: "Farming Development",
-      date: "3/15/2022",
-      area: "Kibia, Makilala, Cotabato",
-      scope: "Executive",
-      sector: "Agriculture",
-      summary:
-        "An initiative to support local farmers with modern tools, training, and sustainable farming practices.",
-      story:
-        "The Agricultural Support Program provided farmers with access to quality seeds, fertilizers, and irrigation systems. It also introduced organic farming techniques and crop diversification strategies. This helped increase yield, improve livelihoods, and strengthen Cotabato's food security.",
-      projectImg: [farming, treePlanting, school],
-    },
-    {
-      project: "Barangay Electrification Initiative",
-      img: electricity,
-      overview: "Rural Power Access",
-      date: "6/20/2022",
-      area: "New Israel, Makilala, Cotabato",
-      scope: "Legislative",
-      sector: "Energy",
-      summary:
-        "A project dedicated to providing electricity to remote areas to improve living standards and economic growth.",
-      story:
-        "The Barangay Electrification Initiative connected hundreds of households to the power grid for the first time. Through collaboration with the local electric cooperative, solar-powered systems were also installed in areas unreachable by standard transmission lines, lighting up lives and enabling local businesses to grow.",
-      projectImg: [electricity, school, farming],
-    },
-    {
-      project: "Greening Cotabato Project",
-      img: treePlanting,
-      overview: "Tree Planting & Environmental Restoration",
-      date: "9/5/2022",
-      area: "Bialong, Matalam, Cotabato",
-      scope: "Legislative",
-      sector: "Environment",
-      summary:
-        "An environmental conservation effort focusing on reforestation and climate resilience in Cotabato's upland areas.",
-      story:
-        "Thousands of trees were planted under the Greening Cotabato Project, involving students, farmers, and local volunteers. The initiative helped prevent soil erosion, restore biodiversity, and promote environmental awareness in the community, contributing to a greener and cleaner Cotabato.",
-      projectImg: [treePlanting, farming, culture],
-    },
-    {
-      project: "Cultural Heritage Support",
-      img: culture,
-      overview: "Cultural Empowerment",
-      date: "12/10/2021",
-      area: "Poblacion, Kidapawan City, Cotabato",
-      scope: "Executive",
-      sector: "Culture",
-      summary:
-        "A cultural preservation project supporting the Badjao community through livelihood programs and heritage promotion.",
-      story:
-        "This initiative helped the Badjao people preserve their traditional crafts and dances while providing sustainable income opportunities. Cultural centers were established to showcase their art, music, and traditions, fostering inclusivity and pride within the community.",
-      projectImg: [culture, school, treePlanting],
-    },
-    {
-      project: "Community Hospital Renovation",
-      img: hospital,
-      overview: "Health Infrastructure",
-      date: "5/8/2023",
-      area: "Malasila, Makilala, Cotabato",
-      scope: "Legislative",
-      sector: "Healthcare",
-      summary:
-        "An infrastructure improvement project aimed at enhancing hospital facilities and medical services in local communities.",
-      story:
-        "The Community Hospital Renovation project upgraded the facility with new medical equipment, improved patient wards, and expanded outpatient services. Medical staff received training to handle modern systems, ensuring quality healthcare for residents of Makilala and nearby areas.",
-      projectImg: [hospital, school, electricity],
-    },
-  ];
-
+  
   const filter: FilterProps[] = [
     {
       filterName: "Scope",
@@ -172,7 +80,7 @@ const Directory = () => {
 
     if (keyword.trim() !== "") {
       filtered = filtered.filter(project =>
-        project.project.toLowerCase().includes(keyword.toLowerCase()) ||
+        project.projectTitle.toLowerCase().includes(keyword.toLowerCase()) ||
         project.overview.toLowerCase().includes(keyword.toLowerCase()) ||
         project.summary.toLowerCase().includes(keyword.toLowerCase()) ||
         project.area.toLowerCase().includes(keyword.toLowerCase())
@@ -200,7 +108,7 @@ const Directory = () => {
                 <div className="h-1/2">
                   <img
                     src={name.img}
-                    alt={name.project}
+                    alt={name.projectTitle}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -208,7 +116,7 @@ const Directory = () => {
                 <div className="h-1/2 flex flex-col justify-between p-4 text-gray-800">
                   <div>
                     <p className="text-lg font-semibold mb-2 line-clamp-2">
-                      {name.project}
+                      {name.projectTitle}
                     </p>
                     <div className="text-sm space-y-1 line-clamp-3">
                       <p>
