@@ -13,6 +13,7 @@ import Plan from './components/plan/Plan'
 import BillPassed from './components/legislative/BillPassed'
 import ScrollToTop from './features/ScrollToTop'
 import ProjectPassed from './components/project/ProjectPassed'
+import News from './pages/News'
 
 // Layout component that includes ScrollToTop
 const Layout = () => (
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
       {path: '/legislative/:billCode', element: <BillPassed />},
       {path: '/projects', element: <Projects />},
       {path: '/projects/:projectTitle', element: <ProjectPassed />},
+      {path: '/news', element: <News />},
       {path: '/livesTouched', element: <LivesTouched />},
       {path: '/contact', element: <Contact />},
       {path: '/issue', element: <KeyIssue1 />},

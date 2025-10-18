@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { projectDirectory } from "../data/projectData"
+import { useNavigate } from "react-router-dom";
 interface ProjectItem {
   projectTitle: string;
   img: string;
@@ -19,6 +20,8 @@ interface FilterProps {
 }
 
 const Directory = () => {
+  
+  const navigate = useNavigate();
   
   const filter: FilterProps[] = [
     {
@@ -94,9 +97,9 @@ const Directory = () => {
     <div className="px-[5%] flex justify-center font-times gap-10">
       <div>
         <div className="py-5">
-          <h5 className="text-[1.5rem] text-[#5d4102] font-bold">
+          <h4 className="text-[1.5rem] text-[#5d4102] font-bold">
             PROJECT DIRECTORY
-          </h5>
+          </h4 >
         </div>
         <div>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center gap-10">
@@ -104,6 +107,11 @@ const Directory = () => {
               <li
                 key={index}
                 className="w-[21rem] h-[25rem] flex flex-col bg-white shadow-md rounded-md overflow-hidden hover:shadow-lg transition-all duration-300"
+                 onClick={() =>
+                  navigate(`/projects/${name.projectTitle}`, {
+                    state: { project: name, projectDirectory },
+                  })
+                }
               >
                 <div className="h-1/2">
                   <img

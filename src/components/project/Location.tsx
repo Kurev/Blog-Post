@@ -212,9 +212,9 @@ const Location = () => {
                   })
                 }
               >
-                <h3 className="text-lg font-bold text-[#5d4102] mb-2 pr-6">
+                <h2 className="text-lg font-bold text-[#5d4102] mb-2 pr-6">
                   {selectedProject.projectTitle}
-                </h3>
+                </h2>
                 <p className="text-sm text-[#5d4102] mb-3">
                   <span className="font-semibold">Overview:</span>{" "}
                   {selectedProject.overview}

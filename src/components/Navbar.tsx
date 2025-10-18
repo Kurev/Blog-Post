@@ -24,6 +24,10 @@ const Navbar = () => {
       link: "/projects",
     },
     {
+      name: "NEWS & UPDATES",
+      link: "/news",
+    },
+    {
       name: "LIVES TOUCHED",
       link: "/livesTouched",
     },
