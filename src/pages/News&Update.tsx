@@ -1,9 +1,9 @@
 
 
-const News&Update = () => {
+const NewsUpdate = () => {
   return (
     <div>News&Update</div>
   )
 }
 
-export default News&Update
+export default NewsUpdate
