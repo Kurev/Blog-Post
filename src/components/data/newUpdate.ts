@@ -9,7 +9,7 @@ interface NewsUpdateProps {
   thirdPara: string;
 }
 
-const newsdata: NewsUpdateProps[] = [
+export const newsdata: NewsUpdateProps[] = [
   {
     title: "Press Release: City Launches Green Initiative for Sustainable Development",
     img: "",
