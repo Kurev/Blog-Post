@@ -1,6 +1,6 @@
 import MainLayout from "../layouts/MainLayout";
 import Hero from "../components/news/Hero";
-import NewsUpdate from "../components/news/NewUpdate";
+import NewsUpdates from "../components/news/NewsUpdates";
 
 const News = () => {
   return (
@@ -10,7 +10,7 @@ const News = () => {
           <Hero />
         </section>
         <section>
-          <NewsUpdate />
+          <NewsUpdates />
         </section>
       </main>
     </MainLayout>

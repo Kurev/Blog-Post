@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { newsdata } from "../data/newUpdate";
+import { useNavigate } from "react-router-dom";
 
 const NewsUpdate = () => {
   const filterNews = ["ALL", "PRESS RELEASES", "ARTICLES", "MEDIA HIGHLIGHTS"];
   const [selectedFilter, setSelectedFilter] = useState("ALL");
+
+  const navigate = useNavigate();
 
   const filteredNews =
     selectedFilter === "ALL"
@@ -13,7 +16,7 @@ const NewsUpdate = () => {
         );
 
   return (
-    <div className="bg-[#f7f3e7] min-h-screen py-10 md:py-20 px-4 md:px-[5%] font-times">
+    <div className="min-h-screen py-10 md:py-20 px-4 md:px-[5%] font-times">
       {/* Header */}
       <div className="mb-10">
         <h1 className="text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem] font-bold text-black tracking-wide leading-tight">
@@ -47,6 +50,11 @@ const NewsUpdate = () => {
           <div
             key={index}
             className="bg-[#fffaf0] border border-[#e5decf] rounded-md overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col"
+            onClick={() => {
+              navigate(`/news/${news.title}`, {
+                state: {newsSelected: news, newsdata}
+              })
+            }}
           >
             {/* Image */}
             <div
