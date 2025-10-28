@@ -1,4 +1,4 @@
-import wideHero from "../../assets/wideHero.jpg"
+import wideHero from "../../assets/wideHero.webp"
 
 const Hero = () => {
   return (

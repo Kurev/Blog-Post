@@ -19,7 +19,7 @@ export const newsdata: NewsUpdateProps[] = [
     title: "City Launches Green Initiative for Sustainable Development",
     img: news1,
     date: "March 16, 2023",
-    type: "PRESS RELEASE",
+    type: "PRESS RELEASES",
     description:
       "The City Government has launched a Green Initiative to promote environmental sustainability and community resilience. This program aims to reduce carbon emissions and encourage eco-friendly practices among residents.",
     firstPara:
@@ -33,7 +33,7 @@ export const newsdata: NewsUpdateProps[] = [
     title: "Local Youth Group Empowers Communities Through Education",
     img: news2,
     date: "March 16, 2023",
-    type: "ARTICLE",
+    type: "ARTICLES",
     description:
       "A local youth organization has launched an educational outreach program to support underprivileged communities. The initiative provides access to learning materials and mentorship for students in remote areas.",
     firstPara:
@@ -47,7 +47,7 @@ export const newsdata: NewsUpdateProps[] = [
     title: "Farmers Benefit from New Agricultural Training Program",
     img: news3,
     date: "March 16, 2023",
-    type: "MEDIA HIGHLIGHT",
+    type: "MEDIA HIGHLIGHTS",
     description:
       "A new agricultural training program has transformed the lives of small-scale farmers in the region. Participants are achieving higher yields and sustainable farming practices through modern techniques and digital tools.",
     firstPara:
@@ -61,7 +61,7 @@ export const newsdata: NewsUpdateProps[] = [
     title: "New Public Library Opens to Promote Lifelong Learning Education",
     img: news4,
     date: "March 16, 2023",
-    type: "PRESS RELEASE",
+    type: "PRESS RELEASES",
     description:
       "A new public library has opened in the city’s cultural district, offering free access to books, technology, and educational programs. Officials hope it will become a hub for lifelong learning and community engagement.",
     firstPara:
