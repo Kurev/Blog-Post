@@ -8,7 +8,7 @@ import MainLayout from "../layouts/MainLayout";
 const About = () => {
   return (
     <MainLayout>
-      <main>
+      <div>
         <section>
           <Hero />
           <Bio />
@@ -20,7 +20,7 @@ const About = () => {
         <section>
           <Plan />
         </section>
-      </main>
+      </div>
     </MainLayout>
   );
 };

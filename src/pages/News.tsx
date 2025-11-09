@@ -5,14 +5,14 @@ import NewsUpdates from "../components/news/NewsUpdates";
 const News = () => {
   return (
     <MainLayout>
-      <main>
+      <div>
         <section>
           <Hero />
         </section>
         <section>
           <NewsUpdates />
         </section>
-      </main>
+      </div>
     </MainLayout>
   );
 };

@@ -7,7 +7,7 @@ import MainLayout from "../layouts/MainLayout"
 const Legislative = () => {
   return (
     <MainLayout>
-      <main>
+      <div>
         <section>
           <Bio />
         </section>
@@ -17,7 +17,7 @@ const Legislative = () => {
         <section>
           <Committe />
         </section>
-      </main>
+      </div>
     </MainLayout>
   )
 }

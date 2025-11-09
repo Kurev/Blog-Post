@@ -8,7 +8,7 @@ import MainLayout from "../layouts/MainLayout"
 const Projects = () => {
   return (
     <MainLayout>
-      <main>
+      <div>
         <section>
           <Hero />
         </section>
@@ -18,7 +18,7 @@ const Projects = () => {
         <section>
           <Directory />
         </section>
-      </main>
+      </div>
     </MainLayout>
   )
 }

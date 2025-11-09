@@ -7,7 +7,7 @@ import MainLayout from "../layouts/MainLayout";
 const home = () => {
   return (
     <MainLayout>
-      <main>
+      <div>
         <section>
           <Hero />
         </section>
@@ -20,7 +20,7 @@ const home = () => {
         <section>
           <YearsOfService />
         </section>
-      </main>
+      </div>
     </MainLayout>
   );
 };

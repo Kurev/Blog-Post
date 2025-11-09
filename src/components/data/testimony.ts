@@ -11,6 +11,7 @@ interface Testimony {
   sector: string;
   program: string;
   location: string;
+  month: string;
   year: string;
   type: string;
   title: string;
@@ -32,40 +33,42 @@ export const TestimonyData: Testimony[] = [
     sector: "Public Safety",
     program: "Community Police Assistance Program",
     location: "Manila, Philippines",
+    month: "March",
     year: "2024",
     type: "Safety and Infrastructure",
     title: "Building a Safer Community",
     beforeProgram:
-      "Before the program, our patrol units relied on old equipment and had limited communication access. Response times were often delayed due to lack of transport. It was difficult to cover all areas efficiently.",
+      "Before the program, our patrol units relied on old and unreliable vehicles. Communication lines often failed during emergencies, making coordination difficult. Many communities felt unsafe because of slow response times.",
     supportRecieved:
-      "We received new patrol vehicles and upgraded radio systems.",
+      "We received new patrol cars, updated radios, and safety gear for our officers. The government also provided maintenance support and training on efficient community response. These resources gave us renewed confidence to serve better.",
     whatChanged:
-      "Our team can now reach incidents faster and communicate clearly during emergencies.",
+      "Our team can now respond quickly to calls for help in every district. Coordination between stations has become smoother and more reliable. The presence of visible and active patrol units restored trust among residents.",
     conclusion:
-      "The support helped us rebuild trust with the community. People now feel safer knowing help is only a call away. Our work has become more efficient and meaningful than ever before.",
+      "The assistance completely transformed the way we operate. Our officers now feel more capable and motivated in their duties. Residents no longer hesitate to seek help because they know we will come. The program built stronger relationships between the police and the people. It proved that investment in public safety truly strengthens communities.",
   },
   {
     img: testimony2,
     name: "Jose Fuentes",
     work: "Farmer",
     quote1:
-      "The training we received helped us improve out harvest and increase our income.",
+      "The training we received helped us improve our harvest and increase our income.",
     quote2:
       "With better water supply, our yields have doubled, and we no longer worry during dry seasons.",
     sector: "Agriculture",
     program: "Farm Modernization Initiative",
     location: "Bukidnon, Philippines",
+    month: "January",
     year: "2024",
     type: "Agricultural Support",
     title: "Growing Prosperity from the Ground Up",
     beforeProgram:
-      "Before the program, we relied heavily on rainfall to water our crops. Droughts often destroyed months of hard work. Many farmers in our area struggled to make enough income for their families.",
+      "Before the program, our crops often failed due to long dry seasons. We depended entirely on rainfall and had no irrigation system. Many families in our barangay struggled to earn enough from farming alone.",
     supportRecieved:
-      "We were provided with irrigation pumps and training on sustainable farming practices.",
+      "The program provided modern irrigation pumps and fertilizers to improve soil quality. We also received hands-on training in sustainable and organic farming. With technical guidance, we learned to manage resources more efficiently.",
     whatChanged:
-      "Our farms now produce higher yields and we can plant all year round without fear of drought.",
+      "Our farms now produce healthy and abundant crops all year round. The irrigation system ensures our plants survive even during droughts. We have also formed cooperatives to market our produce and share resources.",
     conclusion:
-      "The project gave us stability and hope. Farming has become less of a struggle and more of a livelihood we are proud of. Our community is now thriving and looking forward to the future.",
+      "The project brought lasting improvement to our livelihoods. Farmers are now more knowledgeable and confident in managing their land. Our income has grown steadily, allowing us to provide better for our families. Young people in our community are now encouraged to stay and farm. We truly feel proud knowing our hard work contributes to local food security.",
   },
   {
     img: testimony3,
@@ -78,17 +81,17 @@ export const TestimonyData: Testimony[] = [
     sector: "Health",
     program: "Barangay Health Center",
     location: "San Vicente, Philippines",
+    month: "August",
     year: "2023",
     type: "Medical support",
     title: "A Safer Pregnancy Journey",
     beforeProgram:
-      "Before the program, our health center lacked essential equipment and medicines. Many mothers had to travel far for prenatal care. We often struggled to accommodate everyone safely.",
+      "Before the program, our clinic was too small and lacked proper equipment. Pregnant mothers had to travel far just to get prenatal checkups. Many of them felt unsafe and anxious due to the lack of nearby medical care.",
     supportRecieved:
-      "We received new medical supplies and training for our midwives.",
+      "The project funded new medical equipment and expanded our facility. Midwives received updated training in maternal and infant health. We also gained access to regular medical supplies and emergency kits.",
     whatChanged:
-      "The mothers now receive timely check-ups and safer deliveries in our own barangay.",
+      "Expectant mothers now receive consistent and timely care close to home. The new facility has made deliveries safer and more comfortable. Families trust our health center more than ever before.",
     conclusion:
-      "The improvements brought hope to our community. Expectant mothers feel more secure knowing care is close by. Our barangay has truly become a safer place for families to grow.",
-  }
+      "The improvements gave us hope and strength as healthcare workers. Mothers no longer fear giving birth in our barangay because they feel safe. We have seen a big decrease in pregnancy-related complications. The community now views health care as accessible and reliable. This transformation has truly made our barangay a healthier and more caring place for everyone.",
+  },
 ];
-

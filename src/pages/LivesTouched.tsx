@@ -8,7 +8,7 @@ import MainLayout from "../layouts/MainLayout";
 const LivesTouched = () => {
   return (
     <MainLayout>
-      <main>
+      <div>
         <section>
           <Hero />
         </section>
@@ -21,7 +21,7 @@ const LivesTouched = () => {
         <section>
           <TimeLine />
         </section>
-      </main>
+      </div>
     </MainLayout>
   );
 };
