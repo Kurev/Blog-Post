@@ -23,11 +23,11 @@ const Issue = () => {
             <h3 className="text-[2.112rem] font-semibold">STANCE PF KEY ISSUES</h3>
         </div>
       
-      <ul className="grid grid-cols-3 px-[15%] gap-16 ">
+      <ul className="grid grid-cols-1 xl:grid-cols-3 px-[5%] md:px-[15%] xl:px-[10%] gap-10 md:gap-16 ">
         {issue.map((name, index) => (
-          <div className="flex flex-col gap-5 border-1 px-4 py-10 cursor-pointer hover:bg-[#4e3100] hover:text-white hover:scale-110 duration-500">
+          <div className="w-full flex flex-col gap-5 border-1 px-6 md:px-7 xl:px-4 py-10 cursor-pointer hover:bg-[#4e3100] hover:text-white hover:scale-110 duration-500">
             <h4>Key Issue {index + 1}</h4>
-            <li className="text-justify text-[0.881rem]" key={index}>{name.issues}</li>
+            <li className="text-justify text-xl xl:text-sm" key={index}>{name.issues}</li>
           </div>
         ))}
       </ul>

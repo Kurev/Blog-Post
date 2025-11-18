@@ -32,19 +32,19 @@ const Feature = () => {
   ];
 
   return (
-    <div className="font-times py-30 px-[5%]">
+    <div className="font-times py-20 lg:py-30 px-[5%]">
       <div className="flex items-center justify-center w-full mb-10">
         <p className="text-[2.438rem] font-semibold">Featured Projects</p>
       </div>
-      <div className="grid grid-cols-3 gap-1">
+      <div className="grid grid-cols1 lg:grid-cols-3 gap-10">
         {features.map((feature, index) => (
-          <div key={index} className="bg-[#fff9df] max-w-[20rem] mx-auto ">
-            <div className=" w-full h-[10rem] bg-cover bg-center aspect-[2/1]"
+          <div key={index} className="bg-[#fff9df] w-full lg:max-w-[20rem] mx-auto ">
+            <div className=" w-full lg:h-[10rem] bg-cover bg-center aspect-[2/1]"
               style={{
                 backgroundImage: `url(${feature.imgs})`
               }}
             ></div>
-            <div className="px-3">
+            <div className="p-3">
               <p className="text-[1.175rem] py-3 font-semibold">
                 {feature.title}
               </p>
