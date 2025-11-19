@@ -28,7 +28,7 @@ const Sector = () => {
         Sector Highlights
       </h2>
 
-      <div className="grid md:grid-cols-3 gap-10">
+      <div className="grid lg:grid-cols-3 gap-10">
         {sectors.map((sector: SectorData, index: number) => (
           <div key={index} className="text-[#5d4102]">
             <h3 className="text-[2.688rem] font-bold mb-2">{sector.title}</h3>

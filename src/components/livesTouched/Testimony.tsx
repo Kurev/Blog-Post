@@ -24,23 +24,23 @@ const Testimony = () => {
               <img
                 src={testimony.img}
                 alt={testimony.name}
-                className="w-full h-[25rem] object-cover"
+                className="w-full h-[25rem] md:h-[15rem] lg:h-[20rem] xl:h-[25rem] object-cover"
               />
 
               {/* Make the content area flex and evenly aligned */}
               <div className="p-6 flex flex-col items-start flex-1">
-                <p className="text-gray-800 text-[2.2rem] mb-4 text-left">
+                <p className="text-gray-800 text-[1.5rem] md:text-sm lg:text-[1.4rem] xl:text-[2.2rem] mb-4 text-left">
                   “{testimony.quote1}”
                 </p>
 
                 <div className="mt-auto">
-                  <h3 className="font-bold text-gray-900 text-[1.813rem]">
+                  <h3 className="font-bold text-gray-900 text-xl md:text-lg lg:text-[1.813rem]">
                     {testimony.name}
                   </h3>
                  
                 </div>
                 <div>
-                   <p className="text-gray-600 text-[1.438rem]">
+                   <p className="text-gray-600 text-lg md:text-sm lg:text-[1.438rem]">
                     {testimony.work}
                   </p>
                 </div>

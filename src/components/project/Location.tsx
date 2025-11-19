@@ -115,7 +115,7 @@ const Location = () => {
 
   return (
     <div className="w-full bg-[#5d4102] py-16 px-[5%]">
-      <div className="flex flex-col md:flex-row items-stretch justify-center py-7 px-10 bg-[#fff9df] rounded-lg overflow-hidden shadow-lg gap-8 md:gap-20">
+      <div className="flex flex-col lg:flex-row items-stretch justify-center py-7 px-10 bg-[#fff9df] rounded-lg overflow-hidden shadow-lg gap-8 md:gap-20">
         {/* STATS */}
         <div className="flex-1 flex flex-col justify-between gap-4">
           <p className="text-[1.625rem] font-bold text-[#5d4102] font-serif">

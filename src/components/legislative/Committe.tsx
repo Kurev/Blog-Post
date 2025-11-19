@@ -18,24 +18,24 @@ const CollapsedTable = () => {
   ];
 
   return (
-    <div className="px-[5%] py-[4rem] text-[#4e3100] font-times">
+    <div className="px-[5%] py-[2rem] md:py-[4rem] text-[#4e3100] font-times">
       <table className="w-full border border-black border-collapse text-left">
-        <thead >
-          <tr className="text-[1.438rem]">
-            <th className="border-2 border-[#c8c3a9] px-3 py-2 w-[5%]"></th>
-            <th className="border-2 border-[#c8c3a9] px-3 py-2 font-normal">Committee</th>
-            <th className="border-2 border-[#c8c3a9] px-3 py-2 font-normal">Position</th>
-            <th className="border-2 border-[#c8c3a9] px-3 py-2"></th>
+        <thead>
+          <tr className="text-[0.75rem] sm:text-[0.875rem] md:text-[1.125rem] lg:text-[1.438rem]">
+            <th className="border-2 border-[#c8c3a9] px-1 sm:px-2 md:px-3 py-2 w-[5%]"></th>
+            <th className="border-2 border-[#c8c3a9] px-1 sm:px-2 md:px-3 py-2 font-normal">Committee</th>
+            <th className="border-2 border-[#c8c3a9] px-1 sm:px-2 md:px-3 py-2 font-normal">Position</th>
+            <th className="border-2 border-[#c8c3a9] px-1 sm:px-2 md:px-3 py-2"></th>
           </tr>
         </thead>
 
-        <tbody className="text-[1.438rem]">
+        <tbody className="text-[0.75rem] sm:text-[0.875rem] md:text-[1.125rem] lg:text-[1.438rem]">
           {committeeList.map((item) => (
-            <tr key={item.id} >
-              <td className="border-2 border-[#c8c3a9] px-3 py-2 font-semibold">{item.id}</td>
-              <td className="border-2 border-[#c8c3a9] px-3 py-2">{item.committee}</td>
-              <td className="border-2 border-[#c8c3a9] px-3 py-2">{item.position}</td>
-              <td className="border-2 border-[#c8c3a9] px-3 py-2">Journal No. {item.journalNo}</td>
+            <tr key={item.id}>
+              <td className="border-2 border-[#c8c3a9] px-1 sm:px-2 md:px-3 py-2 font-semibold">{item.id}</td>
+              <td className="border-2 border-[#c8c3a9] px-1 sm:px-2 md:px-3 py-2">{item.committee}</td>
+              <td className="border-2 border-[#c8c3a9] px-1 sm:px-2 md:px-3 py-2">{item.position}</td>
+              <td className="border-2 border-[#c8c3a9] px-1 sm:px-2 md:px-3 py-2">Journal No. {item.journalNo}</td>
             </tr>
           ))}
         </tbody>
