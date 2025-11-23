@@ -1,6 +1,6 @@
 
 import MainLayout from '../../layouts/MainLayout'
-import Issue1 from './Issues/Issue1'
+import Issue1 from '../about/IssuePage'
 
 const KeyIssue1 = () => {
   return (

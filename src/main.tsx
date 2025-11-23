@@ -16,6 +16,7 @@ import ProjectPassed from './components/project/ProjectPassed'
 import News from './pages/News'
 import NewsUpdatePassed from './components/news/NewsUpdatePassed'
 import StoryTestimony from './components/livesTouched/StoryTestimony'
+import IssuePage from './components/about/IssuePage'
 
 // Layout component that includes ScrollToTop
 const Layout = () => (
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
     children: [
       {path: '/', element: <Home />},
       {path: '/about', element: <About />},
-      {path: '/keyissue', element: <KeyIssue1 />},
+      {path: '/about/:keyIssue', element: <IssuePage />},
       {path: '/legislative', element: <Legislative />},
       {path: '/legislative/:billCode', element: <BillPassed />},
       {path: '/projects', element: <Projects />},

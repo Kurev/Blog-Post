@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaRegFolderOpen, FaGraduationCap } from "react-icons/fa6";
 import { IoPeopleSharp } from "react-icons/io5";
@@ -27,10 +27,13 @@ interface Project {
 
 const Location = () => {
   const navigate = useNavigate();
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const [selectedBarangay, setSelectedBarangay] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const stat: LocationProps[] = [
     { icon: <FaRegFolderOpen />, title: "87 Projects" },
@@ -63,12 +66,33 @@ const Location = () => {
     };
     document.head.appendChild(script);
 
+    // Listen for fullscreen changes
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+
     return () => {
       if (document.head.contains(script)) {
         document.head.removeChild(script);
       }
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
     };
   }, []);
+
+  // Move modal to correct parent when fullscreen changes
+  useEffect(() => {
+    if (modalRef.current && mapContainerRef.current) {
+      const targetContainer = isFullscreen 
+        ? mapContainerRef.current 
+        : mapContainerRef.current;
+      
+      if (!targetContainer.contains(modalRef.current)) {
+        targetContainer.appendChild(modalRef.current);
+      }
+    }
+  }, [isFullscreen, selectedProject]);
 
   const initMap = () => {
     const mapElement = document.getElementById("map");
@@ -85,7 +109,6 @@ const Location = () => {
           },
         ],
       });
-
 
       projectDirectory.forEach((proj) => {
         if (proj.lat && proj.lng) {
@@ -104,7 +127,6 @@ const Location = () => {
             },
           });
 
-          // ✅ Correct click event (no change needed)
           marker.addListener("click", () => {
             setSelectedProject(proj);
           });
@@ -178,14 +200,17 @@ const Location = () => {
           </div>
         </div>
 
-        <div className="flex-1 md:flex-[1.5] relative">
+        <div ref={mapContainerRef} className="flex-1 md:flex-[1.5] relative">
           <div
             id="map"
             className="w-full h-full min-h-[300px] md:min-h-[400px] rounded-md border-4 border-white shadow-md"
           ></div>
 
           {selectedProject && (
-            <div className="absolute top-4 left-4 right-4 bg-white rounded-lg shadow-2xl overflow-hidden max-w-sm z-10 cursor-pointer">
+            <div 
+              ref={modalRef}
+              className={`${isFullscreen ? 'fixed' : 'absolute'} top-4 left-4 right-4 bg-white rounded-lg shadow-2xl overflow-hidden max-w-sm z-[9999] cursor-pointer`}
+            >
               <button
                 onClick={() => setSelectedProject(null)}
                 className="absolute top-2 right-2 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center text-gray-600 hover:text-gray-800 hover:bg-gray-100 z-20"
