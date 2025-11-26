@@ -1,8 +1,23 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TestimonyData } from "../data/testimony";
+import ReactPaginate from "react-paginate";
 
 const Testimony = () => {
   const navigate = useNavigate();
+
+  // Pagination state
+  const itemsPerPage = 6; // number of testimonies per page
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const pageCount = Math.ceil(TestimonyData.length / itemsPerPage);
+  const offset = currentPage * itemsPerPage;
+  const currentItems = TestimonyData.slice(offset, offset + itemsPerPage);
+
+  const handlePageClick = (e: any) => {
+    setCurrentPage(e.selected);
+  };
+
   return (
     <section className="bg-[#f5f0de] py-16 px-6 font-times">
       <div className="max-w-6xl mx-auto text-center">
@@ -11,13 +26,13 @@ const Testimony = () => {
         </h4>
 
         <div className="grid gap-8 md:grid-cols-3">
-          {TestimonyData.map((testimony, index) => (
+          {currentItems.map((testimony, index) => (
             <div
               key={index}
-              className="bg-[#f8f5e7] shadow-md rounded-md overflow-hidden flex flex-col"
+              className="bg-[#f8f5e7] shadow-md rounded-md overflow-hidden flex flex-col cursor-pointer"
               onClick={() =>
-                navigate(`/livesTouched/${testimony.name}` ,{
-                  state: {selected: testimony, TestimonyData }
+                navigate(`/livesTouched/${testimony.name}`, {
+                  state: { selected: testimony, TestimonyData },
                 })
               }
             >
@@ -27,7 +42,6 @@ const Testimony = () => {
                 className="w-full h-[25rem] md:h-[15rem] lg:h-[20rem] xl:h-[25rem] object-cover"
               />
 
-              {/* Make the content area flex and evenly aligned */}
               <div className="p-6 flex flex-col items-start flex-1">
                 <p className="text-gray-800 text-[1.5rem] md:text-sm lg:text-[1.4rem] xl:text-[2.2rem] mb-4 text-left">
                   “{testimony.quote1}”
@@ -37,16 +51,50 @@ const Testimony = () => {
                   <h3 className="font-bold text-gray-900 text-xl md:text-lg lg:text-[1.813rem]">
                     {testimony.name}
                   </h3>
-                 
                 </div>
                 <div>
-                   <p className="text-gray-600 text-lg md:text-sm lg:text-[1.438rem]">
+                  <p className="text-gray-600 text-lg md:text-sm lg:text-[1.438rem]">
                     {testimony.work}
                   </p>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Pagination */}
+        <div className="flex justify-center mt-10">
+          <ReactPaginate
+            previousLabel={"Prev"}
+            nextLabel={"Next"}
+            breakLabel={"..."}
+            pageCount={pageCount}
+            marginPagesDisplayed={1}
+            pageRangeDisplayed={2}
+            onPageChange={handlePageClick}
+            forcePage={currentPage}
+            containerClassName={
+              "flex gap-3 items-center flex-wrap justify-center"
+            }
+            pageClassName={
+              "px-3 py-1 border rounded cursor-pointer hover:bg-[#4e3100] hover:text-white transition-colors"
+            }
+            pageLinkClassName={""}
+            previousClassName={
+              "px-4 py-2 border rounded cursor-pointer hover:bg-[#4e3100] hover:text-white transition-colors"
+            }
+            previousLinkClassName={""}
+            nextClassName={
+              "px-4 py-2 border rounded cursor-pointer hover:bg-[#4e3100] hover:text-white transition-colors"
+            }
+            nextLinkClassName={""}
+            breakClassName={"px-3 py-1"}
+            breakLinkClassName={""}
+            activeClassName={"bg-[#4e3100] text-white"}
+            disabledClassName={
+              "opacity-40 cursor-not-allowed pointer-events-none"
+            }
+          />
         </div>
       </div>
     </section>

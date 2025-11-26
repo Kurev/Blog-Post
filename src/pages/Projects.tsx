@@ -15,7 +15,7 @@ const Projects = () => {
         <section>
           <Location />
         </section>
-        <section>
+        <section className="pb-15">
           <Directory />
         </section>
       </div>

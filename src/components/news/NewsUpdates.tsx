@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { newsdata } from "../data/newUpdate";
 import { useNavigate } from "react-router-dom";
+import ReactPaginate from "react-paginate";
 
 const NewsUpdate = () => {
   const filterNews = ["ALL", "PRESS RELEASES", "ARTICLES", "MEDIA HIGHLIGHTS"];
@@ -8,12 +9,30 @@ const NewsUpdate = () => {
 
   const navigate = useNavigate();
 
+  // Pagination state
+  const itemsPerPage = 4; // change number of news per page
+  const [currentPage, setCurrentPage] = useState(0);
+
   const filteredNews =
     selectedFilter === "ALL"
       ? newsdata
       : newsdata.filter(
           (news) => news.type.toLowerCase() === selectedFilter.toLowerCase()
         );
+
+  const pageCount = Math.ceil(filteredNews.length / itemsPerPage);
+  const offset = currentPage * itemsPerPage;
+  const currentItems = filteredNews.slice(offset, offset + itemsPerPage);
+
+  const handlePageClick = (e: any) => {
+    setCurrentPage(e.selected);
+  };
+
+  // Reset page when filter changes
+  const handleFilterClick = (filter: string) => {
+    setSelectedFilter(filter);
+    setCurrentPage(0);
+  };
 
   return (
     <div className="min-h-screen py-10 md:py-20 px-4 md:px-[5%] font-times">
@@ -32,7 +51,7 @@ const NewsUpdate = () => {
         {filterNews.map((filter) => (
           <button
             key={filter}
-            onClick={() => setSelectedFilter(filter)}
+            onClick={() => handleFilterClick(filter)}
             className={`text-[0.4rem] sm:text-[0.5rem] md:text-[0.6rem] xl:text-[1.375rem] font-bold py-2 px-3 sm:px-4 md:px-6 lg:px-[5rem] rounded-full transition-all cursor-pointer whitespace-nowrap ${
               selectedFilter === filter
                 ? "bg-[#5d4102] text-white"
@@ -46,14 +65,14 @@ const NewsUpdate = () => {
 
       {/* News Cards */}
       <div className="grid gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-15 grid-cols-1 md:grid-cols-2 cursor-pointer">
-        {filteredNews.map((news, index) => (
+        {currentItems.map((news, index) => (
           <div
             key={index}
             className="bg-[#fffaf0] border border-[#e5decf] rounded-md overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col"
             onClick={() => {
               navigate(`/news/${news.title}`, {
-                state: {newsSelected: news, newsdata}
-              })
+                state: { newsSelected: news, newsdata },
+              });
             }}
           >
             {/* Image */}
@@ -70,7 +89,6 @@ const NewsUpdate = () => {
 
             {/* Content */}
             <div className="p-4 sm:p-5 md:p-6 flex flex-col justify-between flex-grow">
-              {/* Top section */}
               <div>
                 <p className="text-[1rem] sm:text-[1.125rem] md:text-[1.25rem] lg:text-[1.5rem] xl:text-[1.75rem] text-[#545454] mb-1">
                   {news.date}
@@ -80,7 +98,6 @@ const NewsUpdate = () => {
                 </h2>
               </div>
 
-              {/* Bottom section */}
               <div className="flex flex-col items-start gap-4 sm:gap-5 md:gap-6 lg:gap-8 mt-4">
                 <p className="text-[0.875rem] sm:text-[1rem] md:text-[1.125rem] lg:text-[1.25rem] xl:text-[1.438rem] text-[#545454] text-justify leading-relaxed">
                   {news.description}
@@ -92,6 +109,41 @@ const NewsUpdate = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* React Paginate */}
+      <div className="flex justify-center mt-10">
+        <ReactPaginate
+          previousLabel={"Prev"}
+          nextLabel={"Next"}
+          breakLabel={"..."}
+          pageCount={pageCount}
+          marginPagesDisplayed={1}
+          pageRangeDisplayed={2}
+          onPageChange={handlePageClick}
+          forcePage={currentPage}
+          containerClassName={
+            "flex gap-3 items-center flex-wrap justify-center"
+          }
+          pageClassName={
+            "px-3 py-1 border rounded cursor-pointer hover:bg-[#4e3100] hover:text-white transition-colors"
+          }
+          pageLinkClassName={""}
+          previousClassName={
+            "px-4 py-2 border rounded cursor-pointer hover:bg-[#4e3100] hover:text-white transition-colors"
+          }
+          previousLinkClassName={""}
+          nextClassName={
+            "px-4 py-2 border rounded cursor-pointer hover:bg-[#4e3100] hover:text-white transition-colors"
+          }
+          nextLinkClassName={""}
+          breakClassName={"px-3 py-1"}
+          breakLinkClassName={""}
+          activeClassName={"bg-[#4e3100] text-white"}
+          disabledClassName={
+            "opacity-40 cursor-not-allowed pointer-events-none"
+          }
+        />
       </div>
     </div>
   );

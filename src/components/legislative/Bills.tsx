@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../assets/fileLogo.png";
 import { IoIosSearch } from "react-icons/io";
 import { SlArrowDown } from "react-icons/sl";
+import { useState } from "react";
+import ReactPaginate from "react-paginate";
 
 interface BillProps {
   billCode: string;
@@ -60,6 +62,18 @@ const Bills = () => {
     },
   ];
 
+  // Pagination state
+  const itemsPerPage = 3;
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const offset = currentPage * itemsPerPage;
+  const currentItems = bills.slice(offset, offset + itemsPerPage);
+  const pageCount = Math.ceil(bills.length / itemsPerPage);
+
+  const handlePageClick = (e: any) => {
+    setCurrentPage(e.selected);
+  };
+
   return (
     <div className="px-[5%] flex flex-col gap-10 md:gap-20">
       <div>
@@ -87,8 +101,10 @@ const Bills = () => {
           </div>
         </div>
       </div>
+
+      {/* LIST (3 only per page) */}
       <ul className="flex flex-col gap-6 md:gap-10">
-        {bills.map((bill, index) => (
+        {currentItems.map((bill, index) => (
           <li
             key={index}
             className="bg-[#fff9df] font-times p-5 md:p-10 pb-4 md:pb-5 flex flex-col gap-4 md:gap-5"
@@ -117,6 +133,7 @@ const Bills = () => {
               <p>Primary Referral: {bill.referral}</p>
               <p>Bill Status: {bill.status}</p>
             </div>
+
             <div className="flex items-center cursor-pointer gap-3">
               <img src={logo} alt="" className="w-[1.25rem] md:w-[1.5rem]" />
               <p className="text-[1rem] md:text-[1.125rem] lg:text-[1.25rem] text-[#4e3100] font-bold">
@@ -126,6 +143,38 @@ const Bills = () => {
           </li>
         ))}
       </ul>
+
+      {/* PAGINATION (React Paginate) */}
+      <div className="flex justify-center mt-5">
+        <ReactPaginate
+          previousLabel={"Prev"}
+          nextLabel={"Next"}
+          breakLabel={"..."}
+          pageCount={pageCount}
+          onPageChange={handlePageClick}
+          containerClassName={
+            "flex gap-3 items-center flex-wrap justify-center"
+          }
+          pageClassName={
+            "px-3 py-1 border rounded cursor-pointer hover:bg-[#4e3100] hover:text-white transition-colors"
+          }
+          pageLinkClassName={""}
+          previousClassName={
+            "px-4 py-2 border rounded cursor-pointer hover:bg-[#4e3100] hover:text-white transition-colors"
+          }
+          previousLinkClassName={""}
+          nextClassName={
+            "px-4 py-2 border rounded cursor-pointer hover:bg-[#4e3100] hover:text-white transition-colors"
+          }
+          nextLinkClassName={""}
+          breakClassName={"px-3 py-1"}
+          breakLinkClassName={""}
+          activeClassName={"bg-[#4e3100] text-white"}
+          disabledClassName={
+            "opacity-40 cursor-not-allowed pointer-events-none"
+          }
+        />
+      </div>
     </div>
   );
 };
