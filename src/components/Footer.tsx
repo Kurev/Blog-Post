@@ -1,27 +1,30 @@
 import { FaFacebook } from "react-icons/fa";
 import { TfiEmail } from "react-icons/tfi";
+import { Link } from "react-router-dom";
 
 interface FooterProps {
   name: string;
+  link: string;
 }
 
 const Footer = () => {
   const mainLinks: FooterProps[] = [
-    { name: "HOME" },
-    { name: "ABOUT US" },
-    { name: "LEGISLATIVE" },
-    { name: "SERVICES" },
+    { name: "HOME", link: "/" },
+    { name: "ABOUT US", link: "/about" },
+    { name: "LEGISLATIVE", link: "/legislative" },
+    { name: "SERVICES", link: "/services" },
   ];
 
   const extraLinks: FooterProps[] = [
-    { name: "NEWS & UPDATES" },
-    { name: "LIVES TOUCHED" },
-    { name: "CONTACT US" },
+    { name: "NEWS & UPDATES", link: "/news" },
+    { name: "LIVES TOUCHED", link: "/livesTouched" },
+    { name: "CONTACT US", link: "/contact" },
   ];
 
   return (
     <div className="bg-[#ede8d0] font-times py-6 md:py-8">
       <div className="bg-[#ede8d0] text-[#5d4102] flex flex-col md:flex-row justify-between px-[5%] pb-7 gap-8 md:gap-4">
+
         {/* Logo/Title */}
         <div className="text-center md:text-left">
           <h1 className="text-lg md:text-xl lg:text-[1.313rem] text-[#5d4102] font-bold">
@@ -32,27 +35,34 @@ const Footer = () => {
         {/* Navigation Links */}
         <div className="flex justify-center w-full">
           <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-16 lg:gap-[10rem] text-center md:text-left">
+
             <div>
               <p className="font-bold mb-2">NAVIGATION</p>
               <ul className="space-y-1">
                 {mainLinks.map((list, index) => (
-                  <li key={index} className="text-sm md:text-base">
-                    {list.name}
-                  </li>
+                  <Link key={index} to={list.link}>
+                    <li className="text-sm md:text-base cursor-pointer">
+                      {list.name}
+                    </li>
+                  </Link>
                 ))}
               </ul>
             </div>
+
             <div>
               <div className="md:translate-y-8">
                 <ul className="space-y-1">
                   {extraLinks.map((list, index) => (
-                    <li key={index} className="text-sm md:text-base">
-                      {list.name}
-                    </li>
+                    <Link key={index} to={list.link}>
+                      <li className="text-sm md:text-base cursor-pointer">
+                        {list.name}
+                      </li>
+                    </Link>
                   ))}
                 </ul>
               </div>
             </div>
+
           </div>
         </div>
 

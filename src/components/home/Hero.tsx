@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import hero from "../../assets/hero.webp";
 
 const Hero = () => {
@@ -67,9 +68,11 @@ const Hero = () => {
               2nd District, championing progress through meaningful legislation
               and dedicated service.
             </p>
-            <button className="text-sm lg:text-lg border-1 px-9 py-3 cursor-pointer hover:bg-[#110c0c] hover:text-white duration-500">
-              Know More
-            </button>
+            <Link to="/about">
+              <button className="text-sm lg:text-lg border-1 px-9 py-3 cursor-pointer hover:bg-[#110c0c] hover:text-white duration-500">
+                Know More
+              </button>
+            </Link>
           </div>
         </div>
       </div>
