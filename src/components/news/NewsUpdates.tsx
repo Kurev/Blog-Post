@@ -35,7 +35,7 @@ const NewsUpdate = () => {
   };
 
   return (
-    <div className="min-h-screen py-10 md:py-20 px-4 md:px-[5%] font-times">
+    <div className="min-h-screen py-10 md:py-20 px-4 md:px-[5%] font-times text-[#5d4102]">
       {/* Header */}
       <div className="mb-10">
         <h1 className="text-[2rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem] font-bold text-black tracking-wide leading-tight">

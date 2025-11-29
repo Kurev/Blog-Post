@@ -236,11 +236,11 @@ const Directory = () => {
                   />
                 </div>
                 <div className="h-1/2 flex flex-col justify-between p-3 md:p-4 text-gray-800">
-                  <div>
+                  <div className="flex flex-col">
                     <p className="text-base md:text-lg font-semibold mb-2 line-clamp-2">
                       {project.projectTitle}
                     </p>
-                    <div className="text-xs md:text-sm space-y-1 line-clamp-3">
+                    <div className="text-xs md:text-sm space-y-1">
                       <p>
                         <span className="font-medium">Overview:</span>{" "}
                         {project.overview}

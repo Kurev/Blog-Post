@@ -111,14 +111,14 @@ const Issue = () => {
   return (
     <div className="font-times text-[#5d4102] py-[5rem]">
       <div className="flex justify-center mb-12">
-        <h3 className="text-[2.112rem] font-semibold">STANCE PF KEY ISSUES</h3>
+        <h3 className="text-[1.5rem] sm:text-[5vw] md:text-[4vw] lg:text-[2.112rem] font-semibold">STANCE KEY ISSUES</h3>
       </div>
 
-      <ul className="grid grid-cols-1 xl:grid-cols-3 px-[5%] md:px-[15%] xl:px-[10%] gap-10 md:gap-16 ">
+      <ul className="grid grid-cols-1 lg:grid-cols-3 px-[5%] md:px-[15%] lg:px-[5%] xl:px-[10%] gap-10 lg:gap-7 xl:gap-16 justify-items-center">
         {currentItems.map((data, index) => (
           <div
             key={data.id}
-            className="w-full flex flex-col gap-5 border-1 px-6 md:px-7 xl:px-4 py-10 cursor-pointer hover:bg-[#4e3100] hover:text-white hover:scale-110 duration-500"
+            className="lg:max-w-[25rem] flex flex-col gap-5 border-1 px-6 md:px-7 xl:px-4 py-5 md:py-10 cursor-pointer hover:bg-[#4e3100] hover:text-white hover:scale-110 duration-500"
             onClick={() => {
               navigate(`/about/keyIssue${data.id}`, {
                 state: { selectedIssue: data, issues: issue },
@@ -126,7 +126,7 @@ const Issue = () => {
             }}
           >
             <h4>Key Issue {offset + index + 1}</h4>
-            <li className="text-justify text-xl xl:text-sm">{data.issues}</li>
+            <li className="text-justify text-sm md:text-sm lg:text-[0.75rem] xl:text-sm">{data.issues}</li>
           </div>
         ))}
       </ul>

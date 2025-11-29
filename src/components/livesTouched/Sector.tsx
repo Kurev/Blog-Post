@@ -32,7 +32,7 @@ const Sector = () => {
         {sectors.map((sector: SectorData, index: number) => (
           <div key={index} className="text-[#5d4102]">
             <h3 className="text-[2.688rem] font-bold mb-2">{sector.title}</h3>
-            <p className="text-[1.563rem]">{sector.description}</p>
+            <p className="text-sm md:text-[1.5rem] lg:text-[1.3rem] xl:text-[1.563rem] text-justify">{sector.description}</p>
           </div>
         ))}
       </div>

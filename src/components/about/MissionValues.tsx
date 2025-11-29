@@ -9,14 +9,14 @@ const MissionValues = () => {
           Decades of Leadership, <br /> Thousands of Lives Changed
         </p>
       </div>
-      <div className="flex flex-col md:flex-row gap-10 md:gap-16 lg:gap-14">
-        <p className="text-justify text-lg lg:text-[1.119rem] ">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-16 lg:gap-14">
+        <p className="text-justify text-sm md:text-[1rem] lg:text-[1.119rem] ">
           Mission LLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
           do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
           ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.{" "}
         </p>
-        <p className="text-justify text-lg lg:text-[1.119rem] ">
+        <p className="text-justify text-sm md:text-[1rem] lg:text-[1.119rem] ">
           Values LLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
           do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
           ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
