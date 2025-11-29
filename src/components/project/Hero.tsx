@@ -3,7 +3,7 @@ import heroImg from "../../assets/heroProductImg.webp";
 const Hero = () => {
   return (
     <div
-      className="font-times min-h-screen flex flex-col justify-center gap-10 md:gap-16 lg:gap-20 bg-center bg-cover"
+      className="font-times h-[70vh] md:min-h-screen flex flex-col justify-center gap-10 md:gap-16 lg:gap-20 bg-center bg-cover"
       style={{
         backgroundImage: `linear-gradient(rgba(176, 173, 155, 0.79) 1%, rgba(237, 232, 208, 0.9) 100%), url(${heroImg})`,
       }}
