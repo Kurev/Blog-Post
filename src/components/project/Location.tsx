@@ -137,7 +137,7 @@ const Location = () => {
 
   return (
     <div className="w-full bg-[#5d4102] py-16 px-[5%]">
-      <div className="flex flex-col lg:flex-row items-stretch justify-center py-7 px-10 bg-[#fff9df] rounded-lg overflow-hidden shadow-lg gap-8 md:gap-20">
+      <div className="h-full flex flex-col lg:flex-row items-stretch justify-center max-[321px]:py-20 min-[321px]:py-22 sm:py-7 px-10 bg-[#fff9df] rounded-lg overflow-hidden shadow-lg gap-8 md:gap-20">
         {/* STATS */}
         <div className="flex-1 flex flex-col justify-between gap-4">
           <p className="text-[1.625rem] font-bold text-[#5d4102] font-serif">
@@ -209,7 +209,7 @@ const Location = () => {
           {selectedProject && (
             <div 
               ref={modalRef}
-              className={`${isFullscreen ? 'fixed' : 'absolute'} top-4 left-4 right-4 bg-white rounded-lg shadow-2xl overflow-hidden max-w-sm z-[9999] cursor-pointer`}
+              className={`${isFullscreen ? 'fixed z-50' : 'absolute'} top-1 md:top-4 left-4 right-4 bg-white rounded-lg shadow-2xl overflow-hidden max-w-sm cursor-pointer `}
             >
               <button
                 onClick={() => setSelectedProject(null)}
@@ -237,18 +237,18 @@ const Location = () => {
                   })
                 }
               >
-                <h2 className="text-lg font-bold text-[#5d4102] mb-2 pr-6">
+                <h2 className="text-sm sm:text-[0.8rem] md:text-[1.2rem] lg:text-lg font-bold text-[#5d4102] mb-2 pr-6">
                   {selectedProject.projectTitle}
                 </h2>
-                <p className="text-sm text-[#5d4102] mb-3">
+                <p className="text-[0.8rem] md:text-sm text-[#5d4102] mb-1">
                   <span className="font-semibold">Overview:</span>{" "}
                   {selectedProject.overview}
                 </p>
-                <p className="text-sm text-[#5d4102] mb-1">
+                <p className="text-[0.8rem] md:text-sm text-[#5d4102] mb-1">
                   <span className="font-semibold">Date:</span>{" "}
                   {selectedProject.date}
                 </p>
-                <p className="text-sm text-[#5d4102]">
+                <p className="text-[0.8rem] md:text-sm text-[#5d4102]">
                   <span className="font-semibold">Area:</span>{" "}
                   {selectedProject.area}
                 </p>

@@ -31,7 +31,7 @@ const Sector = () => {
       <div className="grid lg:grid-cols-3 gap-10">
         {sectors.map((sector: SectorData, index: number) => (
           <div key={index} className="text-[#5d4102]">
-            <h3 className="text-[2.688rem] font-bold mb-2">{sector.title}</h3>
+            <h3 className="text-lg md:text-[1.8rem] lg:text-[2.688rem] font-bold mb-2">{sector.title}</h3>
             <p className="text-sm md:text-[1.5rem] lg:text-[1.3rem] xl:text-[1.563rem] text-justify">{sector.description}</p>
           </div>
         ))}
