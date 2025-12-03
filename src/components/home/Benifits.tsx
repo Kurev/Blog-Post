@@ -38,11 +38,11 @@ const Benifits = () => {
   ];
   return (
     <div>
-      <ul className="grid grid-cols-1 lg:grid-cols-3">
+      <ul className="grid grid-cols-3">
         {benefits.map((name, index) => (
           <li
             key={index}
-            className={`${name.color} px-10 py-12 flex text-7xl lg:text-lg items-center justify-center text-white bg-cover bg-center h-[20rem] lg:h-[17rem] font-times text-[1.513rem] bg-blend-multiply`}
+            className={`${name.color} px-10 py-12 flex text-[2vw] md:text-[2vw] lg:text-lg items-center justify-center text-white bg-cover bg-center md:h-[12rem] lg:h-[17rem] font-times bg-blend-multiply`}
             style={{
               backgroundImage: name.imgs ? `url(${name.imgs})` : "none",
               backgroundColor: "#cda26f",

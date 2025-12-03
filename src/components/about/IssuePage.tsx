@@ -31,7 +31,7 @@ const IssuePage = () => {
   const nextIssue = issues[nextIndex];
 
   const handleNext = () => {
-    navigate(`/about/keyIssue${nextIssue.id}`, {
+    navigate(`/about/issue/${nextIssue.id}`, {
       state: { selectedIssue: nextIssue, issues },
     });
   };
